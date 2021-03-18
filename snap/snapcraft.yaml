@@ -1,0 +1,27 @@
+name: firewall-gael
+version: "0.1"
+base: core20
+summary: Firewall script launcher
+description: Firewall script launcher
+
+grade: stable
+confinement: strict
+license: GPL-3.0
+
+architectures:
+  - build-on: amd64
+    run-on: all
+
+apps:
+  srv:
+    command: bin/srv
+    daemon: oneshot
+    plugs: [ firewall-control ]
+  clear:
+    command: bin/clear
+    plugs: [ firewall-control ]
+
+parts:
+  wrapper:
+    plugin: dump
+    source: snap/local

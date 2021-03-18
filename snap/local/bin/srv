@@ -1,0 +1,24 @@
+#!/bin/bash
+
+IPV4_FIREWALL_SCRIPT=${SNAP_COMMON}/ipv4firewall.sh
+IPV6_FIREWALL_SCRIPT=${SNAP_COMMON}/ipv6firewall.sh
+
+if [[ -x "$IPV4_FIREWALL_SCRIPT" ]]
+then
+    echo "File '$IPV4_FIREWALL_SCRIPT' is executable"
+
+    $IPV4_FIREWALL_SCRIPT
+else
+    echo "File '$IPV4_FIREWALL_SCRIPT' is not found or not executable"
+fi
+
+if [[ -x "$IPV6_FIREWALL_SCRIPT" ]]
+then
+    echo "File '$IPV6_FIREWALL_SCRIPT' is executable"
+
+    $IPV6_FIREWALL_SCRIPT
+else
+    echo "File '$IPV6_FIREWALL_SCRIPT' is not found or not executable"
+fi
+
+exit 0
