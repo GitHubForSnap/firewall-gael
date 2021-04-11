@@ -20,6 +20,9 @@ Firewall script launcher
    sudo chmod +x /var/snap/firewall-gael/common/ipv6firewall.sh
 ```
 
+* Connect firewall-control
+`sudo snap connect firewall-gael:firewall-control`
+
 * Restart firewall-gael
 `sudo snap restart firewall-gael.srv`
 
