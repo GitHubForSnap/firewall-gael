@@ -1,11 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 
-### CLEAR ALL THE RULES ###
+IPV4_FIREWALL_SCRIPT=${SNAP_COMMON}/ipv4firewall.sh
+IPV6_FIREWALL_SCRIPT=${SNAP_COMMON}/ipv6firewall.sh
 
-iptables -F
-iptables -X
-iptables -Z
+if [[ -x "$IPV4_FIREWALL_SCRIPT" ]]
+then
 
-iptables -t nat -F
-iptables -t nat -X
-iptables -t nat -Z
+   iptables -F
+   iptables -X
+   iptables -Z
+
+   iptables -t nat -F
+   iptables -t nat -X
+   iptables -t nat -Z
+fi
+
+if [[ -x "$IPV6_FIREWALL_SCRIPT" ]]
+then
+
+   ip6tables -F
+   ip6tables -X
+   ip6tables -Z
+
+   ip6tables -t nat -F
+   ip6tables -t nat -X
+   ip6tables -t nat -Z
+fi
+
+exit 0
