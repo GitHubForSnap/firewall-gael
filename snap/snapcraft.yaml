@@ -9,9 +9,8 @@ confinement: strict
 license: GPL-3.0
 
 architectures:
-  - build-on: arm64
-  - build-on: armhf
   - build-on: amd64
+    run-on: all
 
 apps:
   srv:
