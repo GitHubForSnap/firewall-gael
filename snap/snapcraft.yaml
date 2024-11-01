@@ -1,6 +1,6 @@
 name: firewall-gael
-version: "1.0-core22"
-base: core22
+version: "v1.0-core24"
+base: core24
 summary: Firewall script launcher
 description: Firewall script launcher
 
@@ -8,9 +8,8 @@ grade: stable
 confinement: strict
 license: GPL-3.0
 
-architectures:
-  - build-on: amd64
-    build-for: amd64
+platforms:
+  amd64:
 
 apps:
   srv:

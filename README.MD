@@ -26,6 +26,9 @@ Firewall script launcher
 * Restart firewall-gael
 `sudo snap restart firewall-gael.srv`
 
+**2024-11-01**
+* Switching to core24
+
 **2021-04-11**
 * First release of firewall-gael on armhf, arm64, amd64
 
